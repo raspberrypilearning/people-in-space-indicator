@@ -253,6 +253,8 @@ Next you'll connect some LEDs to the Pi's GPIO pins and use each of them to repr
     ...]
     ```
 
+    *This prints out a representation of each object in the list, which shows some useful information.*
+
 1. Test the `leds` list by turning them all on:
 
     ```python
@@ -267,33 +269,95 @@ Next you'll connect some LEDs to the Pi's GPIO pins and use each of them to repr
     >>> [led.off() for led in leds]
     ```
 
-## Make a live indicator
+    *Tip: use `Alt + P` (previous) to go through your command history and edit the last command entered.*
+
+## Make the indicator
 
 Now you'll use the LEDs to display the number of people currently in space.
 
-1.
+1. Now it's time to bring it all together in a file. Click `File > New File`.
 
-```python
-from gpiozero import LED
-import requests
-from time import sleep
+1. Start by importing the libraries you've used:
 
-pins = [9, 22, 8, 18, 7, 17, 25, 23, 24]  # choose your own pin numbers - these are the SnowPi pins
-leds = [LED(p) for p in pins]
+    ```python
+    from gpiozero import LED
+    import requests
+    ```
 
-url = "http://api.open-notify.org/astros.json"
+1. Add the LED setup:
 
-while True:
+    ```python
+    pins = [2, 3, 4, 14, 15, 17, 18, 27, 22, 23]
+    leds = [LED(p) for p in pins]
+    ```
+
+1. Add the `requests` code:
+
+    ```python
+    url = "http://api.open-notify.org/astros.json"
+
     r = requests.get(url)
     j = r.json()
     n = j['number']
+    ```
+
+1. Now rather than just printing `n`, you can use it to determine how many LEDs should be lit. Consider the following loop:
+
+    ```python
+    for led in leds:
+        led.on()
+    ```
+
+    This allow you to access each LED in turn. However, we need to know at what point to stop turning them on.
+
+1. You'll need to be able to compare the number in `n` to each LED number (order in the sequence - not GPIO pin number). You'll need to use the `enumerate` function to assign a number to each LED in sequence. See how `enumerate` works by trying it out in the shell (not the file):
+
+    ```python
+    >>> list(enumerate(leds))
+    [(0, <gpiozero.LED object on pin=2, is_active=False>),
+     (1, <gpiozero.LED object on pin=3, is_active=False>),
+     (2, <gpiozero.LED object on pin=4, is_active=False>),
+    ...]
+    ```
+
+    As you can see, this provides a list of the LEDs associated with index numbers starting from `0`.
+
+1. Since `enumerate` returns two values (the *index number* and the *LED object*), you can loop over it and access both values by using `for i, led in enumerate(leds)`. Add the following loop to the code in your file:
+
+    ```python
     for i, led in enumerate(leds):
         if n > i:
             led.on()
         else:
             led.off()
-    sleep(60)  # update every minute
-```
+    ```
+
+1. Save and run your code. Assuming the API returns `6`, you should have 6 LEDs light up!
+
+1. You'll want to check the API for changes periodically. It's important to make sure you're not making too many requests to the API. Start by importing `sleep` by adding the import at the top of the file with the others:
+
+    ```python
+    from time import sleep
+    ```
+
+1. Now wrap the `requests` and `LED` code in a `while` loop to make it run continuously and keep updating the LEDs:
+
+    ```python
+    while True:
+        r = requests.get(url)
+        j = r.json()
+        n = j['number']
+        for i, led in enumerate(leds):
+            if n > i:
+                led.on()
+            else:
+                led.off()
+        sleep(60)  # update every minute
+    ```
+
+    Ensure the sleep is added at the end so it waits 60 seconds between API calls to check the result every minute.
+
+1. Run the code and it should always show the current number of people in space. Leave it running and it should update in the future, as astronauts are delivered to and from the International Space Station.
 
 ## Astronaut names
 
