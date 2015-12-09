@@ -67,8 +67,10 @@ Now you'll use the `requests` module in Python to access the API.
 1. In the Python shell, type the following line and press **Enter**:
 
     ```python
-    import requests
+    >>> import requests
     ```
+
+    (note the `>>>` is not typed, but denotes shell input)
 
     *You're using the Python shell's REPL (Read Evaluative Print Loop) which means each line is executed immediately, rather than writing a file, saving it and running all commands in one go*
 
@@ -169,7 +171,7 @@ Now you'll use the `requests` module in Python to access the API.
 
     That's it!
 
-    Looking back and the commands used, putting it all together, the following code was required to retrieve the number of people in space:
+1. Looking back and the commands used, putting it all together, the following code was required to retrieve the number of people in space:
 
     ```python
     import requests
@@ -182,16 +184,137 @@ Now you'll use the `requests` module in Python to access the API.
     print(n)
     ```
 
-## What next?
+## Adding LEDs
+
+Next you'll connect some LEDs to the Pi's GPIO pins and use each of them to represent a person in space.
+
+1. Start by using a male-to-female jumper wire to connect one of the Pi's ground pins to the breadboard's ground rail:
+
+    ![Breadboard ground rail](images/gpio-connect-ground.png)
+
+1. Now connect a single LED to the Pi by wiring it to the ground rail and pin 2, using a male-to-male wire, a male-to-female wire and a resistor:
+
+    ![LED on GPIO pin 2](images/led-pin2.png)
+
+1. Start by importing the LED class from the GPIO Zero library:
+
+    ```python
+    >>> from gpiozero import LED
+    ```
+
+1. Create an instance of an `LED` object on pin 2:
+
+    ```python
+    >>> led = LED(2)
+    ```
+
+1. Try lighting the LED:
+
+    ```python
+    >>> led.on()
+    ```
+
+    It should now be on!
+
+1. Connect a second LED to pin 3:
+
+    ![LEDs on GPIO pins 2 and 3](images/leds-pins2-3.png)
+
+1. Connect the rest of your LEDs (10 total) onto the successive pins (4, 14, 15, 17, 18, 27, 22, 23) in the same way.
+
+1. Ensure your previously used LED on pin 2 is closed:
+
+    ```python
+    >>> led.close()
+    ```
+
+1. Create a list of the pin numbers you're using:
+
+    ```python
+    >>> pins = [2, 3, 4, 14, 15, 17, 18, 27, 22, 23]
+    ```
+
+1. Create a list of LEDs using these pin numbers:
+
+    ```python
+    >>> leds = [LED(pin) for pin in pins]
+    ```
+
+    *This is called list comprehension - generating a list in one line instead of using a traditional loop*
+
+1. Inspect the `leds` list:
+
+    ```python
+    >>> leds
+    [<gpiozero.LED object on pin=2, is_active=False>,
+    <gpiozero.LED object on pin=3, is_active=False>,
+    <gpiozero.LED object on pin=4, is_active=False>,
+    <gpiozero.LED object on pin=14, is_active=False>,
+    ...]
+    ```
+
+1. Test the `leds` list by turning them all on:
+
+    ```python
+    >>> [led.on() for led in leds]
+    ```
+
+    *This is another use of a list comprehension - running a command on every item in a list*
+
+1. Turn them off:
+
+    ```python
+    >>> [led.off() for led in leds]
+    ```
+
+## Make a live indicator
+
+Now you'll use the LEDs to display the number of people currently in space.
+
+1.
 
 ```python
+from gpiozero import LED
 import requests
 from time import sleep
 
+pins = [9, 22, 8, 18, 7, 17, 25, 23, 24]  # choose your own pin numbers - these are the SnowPi pins
+leds = [LED(p) for p in pins]
+
 url = "http://api.open-notify.org/astros.json"
 
-r = requests.get(url)
-j = r.json()
-n = j['number']
-print(n)
+while True:
+    r = requests.get(url)
+    j = r.json()
+    n = j['number']
+    for i, led in enumerate(leds):
+        if n > i:
+            led.on()
+        else:
+            led.off()
+    sleep(60)  # update every minute
 ```
+
+## Astronaut names
+
+Finally, learn to get the astronaut names from the API call.
+
+## Important dates
+
+Note the following dates of planned delivery of astronauts on the International Space Station:
+
+- **15 December 2015** - Tim Peake, Yuri Malenchenko and Timothy Kopra
+- **18 March 2016** - Aleksey Ovchinin, Oleg Skripochka, Jeffrey N. Williams
+- **30 May 2016** - Anatoli Ivanishin, Takuya Onishi, Kathleen Rubins
+- **30 September 2016** - Sergey N. Ryzhikov, Andrei Borisenko, Robert S. Kimbrough
+- **30 November 2016** - Oleg Novitskiy, Thomas Pesquet, Peggy Whitson
+
+## What next?
+
+Now you've created a People in Space Indicator with LEDs - try expanding your project:
+
+- Make a fancy display for your indicator
+- Use an add-on board (with at least 9 LEDs) instead of individual LEDs
+- Use an LED or LCD display to scroll the names of the astronauts (e.g [Sense HAT](https://www.raspberrypi.org/products/sense-hat/) or [Display-O-Tron HAT](https://shop.pimoroni.com/collections/raspberry-pi/products/display-o-tron-hat))
+- Make an on-screen display of the number or astronaut names using [PyGame Zero](http://pygame-zero.readthedocs.org)
+- Use `requests` with another API to look up information about each astronaut
