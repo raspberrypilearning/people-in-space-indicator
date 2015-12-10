@@ -1,16 +1,16 @@
 # People in Space Indicator
 
-Use the Python requests module to access the *People in Space API* and create an indicator to show the number of people currently in space.
+Use the Python `requests` module to access the *People in Space API*, and create an indicator to show the number of people currently in space.
 
-British ESA Astronaut Tim Peake will be going to the International Space Station on 15th December 2015 so this is a great activity to do in time for his arrival. As well as the scientific research Tim will be performing while in space, he's also going to be running experiments using Python code written by school students on two Raspberry Pis as part of the [Astro Pi](https://astro-pi.org) project.
+British ESA Astronaut Tim Peake will be going to the International Space Station on 15th December 2015, so this is a great activity to do in time for his arrival. As well as the scientific research Tim will be performing while in space, he's also going to be running experiments using Python code written by school students on two Raspberry Pis, as part of the [Astro Pi](https://astro-pi.org) project.
 
 ## Browse the People in Space API
 
-**API** stands for *Application Programming Interface*. One form of API is a Web API, which can be used to extract data from a service provided online. Some APIs are open to the public and provide data free of charge. Some APIs require a login to access them, which can be obtained with an application, or can be provided as a service to customers for a fee.
+**API** stands for *Application Programming Interface*. One form of API is a *web API*, which can be used to extract data from a service provided online. Some APIs are open to the public and provide data free of charge; other APIs require a login to access them, which can be obtained with an application, or can be provided as a service to customers for a fee.
 
-The purpose of providing data via an API is to allow people to access it for their own use, or to build programs with it. Some APIs provide business critical data sets, or otherwise important data about things like the weather financial activity, or even providing access to things like the Twitter stream or Fickr photographs from around the world. Other APIs are just for fun - like the [Pokemon API](http://pokeapi.co/), the [Star Wars API](http://swapi.co/) or the [Adventure Time API](http://adventuretimeapi.com/). While these APIs were made for fun, they can still be used in interesting and useful ways. You could build a Pokemon game in Minecraft, or build a quiz game about the characters in Adventure Time!
+The purpose of providing data via an API is to allow people to access it for their own use or to build programs with it. Some APIs provide business-critical data sets or otherwise important data about things like the weather, financial activity, or even providing access to things like a Twitter stream or Flickr photographs from around the world. Other APIs are just for fun, like the [Pokemon API](http://pokeapi.co/), the [Star Wars API](http://swapi.co/) or the [Adventure Time API](http://adventuretimeapi.com/). While these APIs were made for fun, they can still be used in interesting and useful ways. You could build a Pokemon game in Minecraft, or build a quiz game about the characters in Adventure Time!
 
-You're going to use the *[People in Space API](http://open-notify.org/Open-Notify-API/People-In-Space/)*, maintained and provided for free by [Nathan Bergey](http://open-notify.org/about).
+For this project, you're going to use the *[People in Space API](http://open-notify.org/Open-Notify-API/People-In-Space/)*, maintained and provided for free by [Nathan Bergey](http://open-notify.org/about).
 
 1. Start by opening a web browser and navigating to the following URL:
 
@@ -39,9 +39,9 @@ You're going to use the *[People in Space API](http://open-notify.org/Open-Notif
     }
     ```
 
-    The format of this data is called **JSON** (pronounced "Jason") which stands for *JavaScript Object Notation*. While the name refers to the programming language *JavaScript*, it's a standard data-interchange format which is made to be portable between languages and applications. If you're familiar with Python's `dictionary` data structure, you'll see the similarities. In other languages a nested array could be used the same way.
+    The format of this data is called **JSON** (pronounced "Jason"), which stands for *JavaScript Object Notation*. While the name refers to the programming language *JavaScript*, it's a standard data interchange format which is made to be portable between languages and applications. If you're familiar with Python's `dictionary` data structure, you'll see the similarities. In other languages, a nested array could be used in the same way.
 
-1. Note that the API provides three pieces of data: `message`, `number` and `people`.
+1. Note that the API provides three pieces of data: `message`, `number`, and `people`.
 
     - `message` is a single string containing the word `success`
     - `number` is the integer value `6`
@@ -68,9 +68,9 @@ Now you'll use the `requests` module in Python to access the API.
 
     (note the `>>>` is not typed, but denotes shell input)
 
-    *You're using the Python shell's REPL (Read Evaluative Print Loop) which means each line is executed immediately, rather than writing a file, saving it and running all commands in one go*
+    *You're using the Python shell's REPL (Read-Eval-Print Loop), which means each line is executed immediately, rather than writing a file, saving it and running all commands in one go*
 
-1. Now create a variable containing the URL of the API, as a string:
+1. Now create a variable containing the URL of the API as a string:
 
     ```python
     url = "http://api.open-notify.org/astros.json"
@@ -82,13 +82,13 @@ Now you'll use the `requests` module in Python to access the API.
     r = requests.get(url)
     ```
 
-1. Now simply type `r`, and press **Enter**. This is the same as typing `print(r)` in a file. The REPL allows you to quickly inspect objects this way. You should now see the following:
+1. Now simply type `r` and press **Enter**; this is the same as typing `print(r)` in a file. The REPL allows you to quickly inspect objects this way. You should now see the following:
 
     ```
     <Response [200]>
     ```
 
-    *This states that `r` contains a `Response` type object, and shows `200`. This is the status code of the request - which means "Success". Other status codes include `404` - which means "File not found" and `500` - "Server error".*
+    *This states that `r` contains a `Response` type object, and shows `200`. This is the status code of the request, which means "Success". Other status codes include `404`, which means "File not found", and `500` - "Server error".*
 
 1. Now enter `help(r)`. This shows the docstring (documentation string) for the `Response` object. You should see:
 
@@ -111,7 +111,7 @@ Now you'll use the `requests` module in Python to access the API.
     - `ok`
     - `text`
 
-    These properties are essentially variables accessible within an object, For example, `r.ok` is a variable containing the success status of the request (`True` or `False`).
+    These properties are essentially variables accessible within an object. For example, `r.ok` is a variable containing the success status of the request (`True` or `False`).
 
 1. Try accessing some of these properties by entering them in the REPL:
 
@@ -135,7 +135,7 @@ Now you'll use the `requests` module in Python to access the API.
 
     This allows you to access the content of the URL request as JSON, which will make it more useful.
 
-    *A method is a function which belongs to an object, and is accessed the same way as a property but called like a function with `()`, i.e. `r.json()`*
+    *A method is a function which belongs to an object. It's accessed in the same way as a property, but called like a function with `()`, for example `r.json()`*
 
 1. Enter `r.json()`. You should see:
 
@@ -167,7 +167,7 @@ Now you'll use the `requests` module in Python to access the API.
 
     That's it!
 
-1. Looking back and the commands used, putting it all together, the following code was required to retrieve the number of people in space:
+1. Looking back at the commands used and putting it all together, the following code was required to retrieve the number of people in space:
 
     ```python
     import requests
@@ -182,13 +182,13 @@ Now you'll use the `requests` module in Python to access the API.
 
 ## Adding LEDs
 
-Next you'll connect some LEDs to the Pi's GPIO pins and use each of them to represent a person in space.
+Next, you'll connect some LEDs to the Pi's GPIO pins and use each of them to represent a person in space.
 
 1. Start by using a male-to-female jumper wire to connect one of the Pi's ground pins to the breadboard's ground rail:
 
     ![Breadboard ground rail](images/gpio-connect-ground.png)
 
-1. Now connect a single LED to the Pi by wiring it to the ground rail and pin 2, using a male-to-male wire, a male-to-female wire and a resistor:
+1. Now connect a single LED to the Pi by wiring it to the ground rail and pin 2, using a male-to-male wire, a male-to-female wire, and a resistor:
 
     ![LED on GPIO pin 2](images/led-pin2.png)
 
@@ -216,7 +216,7 @@ Next you'll connect some LEDs to the Pi's GPIO pins and use each of them to repr
 
     ![LEDs on GPIO pins 2 and 3](images/leds-pins2-3.png)
 
-1. Connect the rest of your LEDs (10 total) onto the successive pins (4, 14, 15, 17, 18, 27, 22, 23) in the same way.
+1. Connect the rest of your LEDs (10 in total) onto the successive pins (4, 14, 15, 17, 18, 22, 23, 27) in the same way.
 
 1. Ensure your previously used LED on pin 2 is closed:
 
@@ -236,7 +236,7 @@ Next you'll connect some LEDs to the Pi's GPIO pins and use each of them to repr
     >>> leds = [LED(pin) for pin in pins]
     ```
 
-    *This is called list comprehension - generating a list in one line instead of using a traditional loop*
+    *This is called list comprehension: generating a list in one line instead of using a traditional loop*
 
 1. Inspect the `leds` list:
 
@@ -257,7 +257,7 @@ Next you'll connect some LEDs to the Pi's GPIO pins and use each of them to repr
     >>> [led.on() for led in leds]
     ```
 
-    *This is another use of a list comprehension - running a command on every item in a list*
+    *This is another use of a list comprehension: running a command on every item in a list*
 
 1. Turn them off:
 
@@ -271,7 +271,7 @@ Next you'll connect some LEDs to the Pi's GPIO pins and use each of them to repr
 
 Now you'll use the LEDs to display the number of people currently in space.
 
-1. Now it's time to bring it all together in a file. Click `File > New File`.
+1. It's time to bring it all together in a file. Click `File > New File`.
 
 1. Start by importing the libraries you've used:
 
@@ -297,16 +297,16 @@ Now you'll use the LEDs to display the number of people currently in space.
     n = j['number']
     ```
 
-1. Now rather than just printing `n`, you can use it to determine how many LEDs should be lit. Consider the following loop:
+1. Now, rather than just printing `n`, you can use it to determine how many LEDs should be lit. Consider the following loop:
 
     ```python
     for led in leds:
         led.on()
     ```
 
-    This allow you to access each LED in turn. However, we need to know at what point to stop turning them on.
+    This allows you to access each LED in turn. However, we need to know at what point we should stop turning them on.
 
-1. You'll need to be able to compare the number in `n` to each LED number (order in the sequence - not GPIO pin number). You'll need to use the `enumerate` function to assign a number to each LED in sequence. See how `enumerate` works by trying it out in the shell (not the file):
+1. You'll need to be able to compare the number in `n` to each LED number (the order in the sequence, not the GPIO pin number). You'll need to use the `enumerate` function to assign a number to each LED in sequence. See how `enumerate` works by trying it out in the shell (not the file):
 
     ```python
     >>> list(enumerate(leds))
@@ -316,9 +316,9 @@ Now you'll use the LEDs to display the number of people currently in space.
     ...]
     ```
 
-    As you can see, this provides a list of the LEDs associated with index numbers starting from `0`.
+    As you can see, this provides a list of the LEDs associated with index numbers, starting from `0`.
 
-1. Since `enumerate` returns two values (the *index number* and the *LED object*), you can loop over it and access both values by using `for i, led in enumerate(leds)`. Add the following loop to the code in your file:
+1. Since `enumerate` returns two values, the *index number* and the *LED object*, you can loop over it and access both values by using `for i, led in enumerate(leds)`. Add the following loop to the code in your file:
 
     ```python
     for i, led in enumerate(leds):
@@ -351,7 +351,7 @@ Now you'll use the LEDs to display the number of people currently in space.
         sleep(60)  # update every minute
     ```
 
-    Ensure the sleep is added at the end so it waits 60 seconds between API calls to check the result every minute.
+    Ensure the sleep is added at the end, so it waits 60 seconds between API calls to check the result every minute.
 
 1. Run the code and it should always show the current number of people in space. Leave it running and it should update in the future, as astronauts are delivered to and from the International Space Station.
 
@@ -359,7 +359,7 @@ Now you'll use the LEDs to display the number of people currently in space.
 
 Finally, learn to get the astronaut names from the API call.
 
-1. When you inspected the JSON object originally, as well as the *number* of people in space, it shows the names of all the astronauts. Return to the Python shell and inspect `j['people']` from the dictionary:
+1. When you originally inspected the JSON object, as well as the *number* of people in space it showed the *names* of all the astronauts. Return to the Python shell and inspect `j['people']` from the dictionary:
 
     ```python
     >>> type(j['people'])
@@ -379,7 +379,7 @@ Finally, learn to get the astronaut names from the API call.
     {'craft': 'ISS', 'name': 'Mikhail Kornienko'}
     ```
 
-1. You can see that the list contains 6 elements, and that each element is another dictionary. All that's left is accessing the individual elements within the dictionary:
+1. You can see that the list contains 6 elements, and that each element is another dictionary. All that's left is to access the individual elements within the dictionary:
 
     ```python
     >>> type(j['people'][0]['craft'])
@@ -408,7 +408,7 @@ Finally, learn to get the astronaut names from the API call.
     Sergey Volkov
     ```
 
-1. Now return to your code and add a line to save the list of astronauts as a variable after saving `n`:
+1. Now return to your code, and add a line to save the list of astronauts as a variable after saving `n`:
 
     ```python
     n = j['number']
@@ -438,10 +438,10 @@ Note the following dates of planned delivery of astronauts on the International 
 
 ## What next?
 
-Now you've created a People in Space Indicator with LEDs - try expanding your project:
+Now you've created a People in Space Indicator with LEDs, try expanding your project:
 
 - Make a fancy display for your indicator
-- Use an add-on board (with at least 9 LEDs) instead of individual LEDs
+- Use an add-on board with at least 9 LEDs, instead of individual LEDs
 - Use an LED or LCD display to scroll the names of the astronauts (e.g [Sense HAT](https://www.raspberrypi.org/products/sense-hat/) or [Display-O-Tron HAT](https://shop.pimoroni.com/collections/raspberry-pi/products/display-o-tron-hat))
-- Make an on-screen display of the number or astronaut names using [PyGame Zero](http://pygame-zero.readthedocs.org)
+- Make an on-screen display of the number or names of the astronauts, using [PyGame Zero](http://pygame-zero.readthedocs.org)
 - Use `requests` with another API to look up information about each astronaut
