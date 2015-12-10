@@ -1,8 +1,8 @@
 # People in Space Indicator
 
-![People in Space Indicator](cover.png)
-
 Use the Python `requests` module to access the *People in Space API*, and create an indicator to show the number of people currently in space.
+
+![People in Space Indicator](cover.png)
 
 ## Requirements
 
@@ -14,7 +14,6 @@ As well as a Raspberry Pi with an SD card loaded with Raspbian, you'll also need
 - 10 x LEDs (e.g. from [Pimoroni](http://shop.pimoroni.com/products/led-5mm-pack-of-10))
 - 10 x 330R resistors (e.g. from [Pimoroni](http://shop.pimoroni.com/products/resistor-grab-bag))
 - 11 x Male-to-female jumper leads (e.g. from [Pimoroni](http://shop.pimoroni.com/products/jumper-jerky))
-- 10 x Male-to-male jumper leads (e.g. from [Pimoroni](http://shop.pimoroni.com/products/jumper-jerky))
 
 ### Software
 

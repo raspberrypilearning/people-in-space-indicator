@@ -2,7 +2,7 @@
   img: breadboard
 - name: 10 x LEDs
   img: led
-- name: 1 x 10R resistors
+- name: 1 x 10R resistor
   img: resistor-10r
 - name: 11 x Male-to-female jumper leads
   img: jumper-male-to-female

@@ -220,6 +220,8 @@ Next, you'll connect some LEDs to the Pi's GPIO pins and use each of them to rep
 
     ![10 LEDs on GPIO pins](images/10-leds.png)
 
+    ![10 LEDs on GPIO pins](images/10-leds.jpg)
+
 1. Ensure your previously used LED on pin 2 is closed:
 
     ```python
@@ -359,6 +361,10 @@ Now you'll use the LEDs to display the number of people currently in space.
 
 1. Run the code and it should always show the current number of people in space. Leave it running and it should update in the future, as astronauts are delivered to and from the International Space Station.
 
+Try making your own indicator unit out of wood or cardboard:
+
+![People in Space Indicator](images/people-in-space-indicator.jpg)
+
 ## Astronaut names
 
 Finally, learn to get the astronaut names from the API call.
@@ -436,7 +442,18 @@ Finally, learn to get the astronaut names from the API call.
 
 1. Run the code again and the LEDs should come on one at a time, with the astronaut's name printed out at the same time.
 
-## Important dates
+## What next?
+
+Now you've created a People in Space Indicator with LEDs, try expanding your project:
+
+- Use an add-on board with at least 9 LEDs, instead of individual LEDs
+- Use an LED or LCD display to scroll the names of the astronauts (e.g [Sense HAT](https://www.raspberrypi.org/products/sense-hat/) or [Display-O-Tron HAT](https://shop.pimoroni.com/collections/raspberry-pi/products/display-o-tron-hat))
+- Make an on-screen display of the number or names of the astronauts, using [PyGame Zero](http://pygame-zero.readthedocs.org)
+- Use `requests` with another API to look up information about each astronaut
+
+![Display-O-Tron HAT indicator](images/dot-hat-space-indicator.jpg)
+
+### Important dates
 
 Note the following dates of planned delivery and departure of astronauts on the International Space Station:
 
@@ -446,13 +463,3 @@ Note the following dates of planned delivery and departure of astronauts on the 
 - **30 May 2016** - Anatoli Ivanishin, Takuya Onishi and Kathleen Rubins arrive
 - **30 September 2016** - Sergey N. Ryzhikov, Andrei Borisenko and Robert S. Kimbrough arrive
 - **30 November 2016** - Oleg Novitskiy, Thomas Pesquet and Peggy Whitson arrive
-
-## What next?
-
-Now you've created a People in Space Indicator with LEDs, try expanding your project:
-
-- Make a fancy display for your indicator
-- Use an add-on board with at least 9 LEDs, instead of individual LEDs
-- Use an LED or LCD display to scroll the names of the astronauts (e.g [Sense HAT](https://www.raspberrypi.org/products/sense-hat/) or [Display-O-Tron HAT](https://shop.pimoroni.com/collections/raspberry-pi/products/display-o-tron-hat))
-- Make an on-screen display of the number or names of the astronauts, using [PyGame Zero](http://pygame-zero.readthedocs.org)
-- Use `requests` with another API to look up information about each astronaut
