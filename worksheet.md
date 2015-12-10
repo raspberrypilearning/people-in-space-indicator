@@ -58,7 +58,7 @@ Now you'll use the `requests` module in Python to access the API.
 
 1. Open Python 3 from the main menu:
 
-    ![Open Python 3](images/open-python3.png)
+    ![Open Python 3](images/python3-app-menu.png)
 
 1. In the Python shell, type the following line and press **Enter**:
 
@@ -184,11 +184,11 @@ Now you'll use the `requests` module in Python to access the API.
 
 Next, you'll connect some LEDs to the Pi's GPIO pins and use each of them to represent a person in space.
 
-1. Start by using a male-to-female jumper wire to connect one of the Pi's ground pins to the breadboard's ground rail:
+1. Start by using a male-to-female jumper wire to connect one of the Pi's ground pins to the breadboard, and add a resistor to connect it to the ground rail:
 
-    ![Breadboard ground rail](images/gpio-connect-ground.png)
+    ![Breadboard resistor ground rail](images/gpio-connect-ground-resistor.png)
 
-1. Now connect a single LED to the Pi by wiring it to the ground rail and pin 2, using a male-to-male wire, a male-to-female wire, and a resistor:
+1. Now connect a single LED to your breadboard with the shorter leg (cathode) to the ground rail and place the longer leg (anode) in the middle of the breadboard. Then use a male-to-female jumper wire to connect the LED's row to GPIO pin 2 on the Pi:
 
     ![LED on GPIO pin 2](images/led-pin2.png)
 
@@ -216,7 +216,9 @@ Next, you'll connect some LEDs to the Pi's GPIO pins and use each of them to rep
 
     ![LEDs on GPIO pins 2 and 3](images/leds-pins2-3.png)
 
-1. Connect the rest of your LEDs (10 in total) onto the successive pins (4, 14, 15, 17, 18, 22, 23, 27) in the same way.
+1. Connect the rest of your LEDs (10 in total) onto the successive pins (4, 14, 15, 17, 18, 22, 23, 27) in the same way:
+
+    ![10 LEDs on GPIO pins](images/10-leds.png)
 
 1. Ensure your previously used LED on pin 2 is closed:
 
@@ -272,6 +274,8 @@ Next, you'll connect some LEDs to the Pi's GPIO pins and use each of them to rep
 Now you'll use the LEDs to display the number of people currently in space.
 
 1. It's time to bring it all together in a file. Click `File > New File`.
+
+1. Save your file as `astronauts.py`
 
 1. Start by importing the libraries you've used:
 
@@ -413,6 +417,12 @@ Finally, learn to get the astronaut names from the API call.
     ```python
     n = j['number']
     astronauts = j['people']
+    ```
+
+1. Then add a line to turn all the LEDs off before the loop starts:
+
+    ```python
+    [led.off() for led in leds]
     ```
 
 1. Inside the `if n > i` statement, after `led.on()`, add two lines to print the astronaut name and then sleep for 1 second in order to pause between each light coming on:

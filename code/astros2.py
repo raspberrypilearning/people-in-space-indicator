@@ -12,6 +12,7 @@ while True:
     j = r.json()
     n = j['number']
     astronauts = j['people']
+    [led.off() for led in leds]
     for i, led in enumerate(leds):
         if n > i:
             led.on()
