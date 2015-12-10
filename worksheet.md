@@ -363,6 +363,73 @@ Now you'll use the LEDs to display the number of people currently in space.
 
 Finally, learn to get the astronaut names from the API call.
 
+1. When you inspected the JSON object originally, as well as the *number* of people in space, it shows the names of all the astronauts. Return to the Python shell and inspect `j['people']` from the dictionary:
+
+    ```python
+    >>> type(j['people'])
+    <class 'list'>
+    >>> j['people']
+    [{'craft': 'ISS', 'name': 'Mikhail Kornienko'}, {'craft': 'ISS', 'name': 'Scott Kelly'}, {'craft': 'ISS', 'name': 'Oleg Kononenko'}, {'craft': 'ISS', 'name': 'Kimiya Yui'}, {'craft': 'ISS', 'name': 'Kjell Lindgren'}, {'craft': 'ISS', 'name': 'Sergey Volkov'}]
+    ```
+
+1. You can see that `j['people']` is a list. Now inspect the list further:
+
+    ```python
+    >>> len(j['people'])
+    6
+    >>> type(j['people'][0])
+    <class 'dict'>
+    >>> j['people'][0]
+    {'craft': 'ISS', 'name': 'Mikhail Kornienko'}
+    ```
+
+1. You can see that the list contains 6 elements, and that each element is another dictionary. All that's left is accessing the individual elements within the dictionary:
+
+    ```python
+    >>> type(j['people'][0]['craft'])
+    <class 'str'>
+    >>> j['people'][0]['craft']
+    'ISS',
+    >>> type(j['people'][0]['name'])
+    <class 'str'>
+    >>> j['people'][0]['name']
+    'Mikhail Kornienko'
+    >>> j['people'][1]['name']
+    'Scott Kelly'
+    ```
+
+1. Try printing out all the astronaut names:
+
+    ```python
+    >>> for astronaut in j['people']:
+            print(astronaut['name'])
+
+    Mikhail Kornienko
+    Scott Kelly
+    Oleg Kononenko
+    Kimiya Yui
+    Kjell Lindgren
+    Sergey Volkov
+    ```
+
+1. Now return to your code and add a line to save the list of astronauts as a variable after saving `n`:
+
+    ```python
+    n = j['number']
+    astronauts = j['people']
+    ```
+
+1. Inside the `if n > i` statement, after `led.on()`, add two lines to print the astronaut name and then sleep for 1 second in order to pause between each light coming on:
+
+    ```python
+    if n > i:
+        led.on()
+        print(astronauts[i]['name'])
+        sleep(1)
+    ```
+
+1. Run the code again and the LEDs should come on one at a time, with the astronaut's name printed out at the same time.
+
 ## Important dates
 
 Note the following dates of planned delivery of astronauts on the International Space Station:
