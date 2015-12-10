@@ -438,13 +438,14 @@ Finally, learn to get the astronaut names from the API call.
 
 ## Important dates
 
-Note the following dates of planned delivery of astronauts on the International Space Station:
+Note the following dates of planned delivery and departure of astronauts on the International Space Station:
 
-- **15 December 2015** - Tim Peake, Yuri Malenchenko and Timothy Kopra
-- **18 March 2016** - Aleksey Ovchinin, Oleg Skripochka, Jeffrey N. Williams
-- **30 May 2016** - Anatoli Ivanishin, Takuya Onishi, Kathleen Rubins
-- **30 September 2016** - Sergey N. Ryzhikov, Andrei Borisenko, Robert S. Kimbrough
-- **30 November 2016** - Oleg Novitskiy, Thomas Pesquet, Peggy Whitson
+- **11 December 2015** - Oleg Kononenko, Kimiya Yui and Kjell Lindgren depart
+- **15 December 2015** - Tim Peake, Yuri Malenchenko and Timothy Kopra arrive
+- **18 March 2016** - Aleksey Ovchinin, Oleg Skripochka and Jeffrey N. Williams arrive
+- **30 May 2016** - Anatoli Ivanishin, Takuya Onishi and Kathleen Rubins arrive
+- **30 September 2016** - Sergey N. Ryzhikov, Andrei Borisenko and Robert S. Kimbrough arrive
+- **30 November 2016** - Oleg Novitskiy, Thomas Pesquet and Peggy Whitson arrive
 
 ## What next?
 
