@@ -1,0 +1,6 @@
+- name: 1 x full-size breadboard
+  img: breadboard
+- name: 11 x Male-to-female jumper leads
+  img: jumper-male-to-female
+- name: 10 x Male-to-male jumper leads
+  img: jumper-male-to-male

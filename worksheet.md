@@ -41,10 +41,6 @@ You're going to use the *[People in Space API](http://open-notify.org/Open-Notif
 
     The format of this data is called **JSON** (pronounced "Jason") which stands for *JavaScript Object Notation*. While the name refers to the programming language *JavaScript*, it's a standard data-interchange format which is made to be portable between languages and applications. If you're familiar with Python's `dictionary` data structure, you'll see the similarities. In other languages a nested array could be used the same way.
 
-1. Observe the following
-
-
-
 1. Note that the API provides three pieces of data: `message`, `number` and `people`.
 
     - `message` is a single string containing the word `success`
