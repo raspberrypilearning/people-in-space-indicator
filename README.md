@@ -11,6 +11,8 @@ As well as a Raspberry Pi with an SD card loaded with Raspbian, you'll also need
 ### Hardware
 
 - 1 x full-size breadboard (e.g. from [Pimoroni](http://shop.pimoroni.com/products/solderless-breadboard-400-point))
+- 10 x LEDs (e.g. from [Pimoroni](http://shop.pimoroni.com/products/led-5mm-pack-of-10))
+- 10 x 330R resistors (e.g. from [Pimoroni](http://shop.pimoroni.com/products/resistor-grab-bag))
 - 11 x Male-to-female jumper leads (e.g. from [Pimoroni](http://shop.pimoroni.com/products/jumper-jerky))
 - 10 x Male-to-male jumper leads (e.g. from [Pimoroni](http://shop.pimoroni.com/products/jumper-jerky))
 
@@ -20,7 +22,7 @@ As well as a Raspberry Pi with an SD card loaded with Raspbian, you'll also need
 
 ## Worksheet
 
-[Get started](worksheet.md)
+- [Get started](worksheet.md)
 
 ## Licence
 
