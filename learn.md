@@ -1,4 +1,4 @@
-By creating a *People in Space Indicator* you will learn:
+By creating a People in Space Indicator, you will learn:
 
 - What APIs are, and how they can be used to provide data services to users and developers
 - What JSON is, and how it can be used to exchange data between languages and applications
