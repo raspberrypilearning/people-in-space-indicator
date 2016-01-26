@@ -39,7 +39,7 @@ For this project, you're going to use the [People in Space API](http://open-noti
     }
     ```
 
-    The format of this data is called **JSON** (pronounced "Jason"), which stands for *JavaScript Object Notation*. While the name refers to the programming language *JavaScript*, it's a standard data interchange format which is made to be portable between languages and applications. If you're familiar with Python's `dictionary` data structure, you'll see the similarities. In other languages, a nested array could be used in the same way.
+    The format of this data is called **JSON** (pronounced "Jason"), which stands for JavaScript Object Notation. While the name refers to the programming language JavaScript, it's a standard data interchange format which is made to be portable between languages and applications. If you're familiar with Python's `dictionary` data structure, you'll see the similarities. In other languages, a nested array could be used in the same way.
 
 1. Note that the API provides three pieces of data: `message`, `number`, and `people`.
 
@@ -88,7 +88,7 @@ Now you'll use the `requests` module in Python to access the API.
     <Response [200]>
     ```
 
-    *This states that `r` contains a `Response` type object, and shows `200`. This is the status code of the request, which means "Success". Other status codes include `404`, which means "File not found", and `500` - "Server error".*
+    This states that `r` contains a `Response` type object, and shows `200`. This is the status code of the request, which means "Success". Other status codes include `404`, which means "File not found", and `500` - "Server error".
 
 1. Now enter `help(r)`. This shows the docstring (documentation string) for the `Response` object. You should see:
 
@@ -124,7 +124,7 @@ Now you'll use the `requests` module in Python to access the API.
     '{\n  "message": "success", \n  "number": 6...
     ```
 
-    *You'll see that `r.text` seems to contain the data you need. However, this is provided as a string which makes it difficult to use.*
+    You'll see that `r.text` seems to contain the data you need. However, this is provided as a string which makes it difficult to use.
 
 1. Observe the `Methods defined here` part of the docstring, which includes:
 
@@ -135,7 +135,7 @@ Now you'll use the `requests` module in Python to access the API.
 
     This allows you to access the content of the URL request as JSON, which will make it more useful.
 
-    *A method is a function which belongs to an object. It's accessed in the same way as a property, but called like a function with `()`, for example `r.json()`*
+    A method is a function which belongs to an object. It's accessed in the same way as a property, but called like a function with `()`, for example `r.json()`
 
 1. Enter `r.json()`. You should see:
 
@@ -210,7 +210,7 @@ Next, you'll connect some LEDs to the Pi's GPIO pins and use each of them to rep
     >>> led.on()
     ```
 
-    It should now be on!
+    The LED should now be lit!
 
 1. Connect a second LED to pin 3:
 
@@ -240,7 +240,7 @@ Next, you'll connect some LEDs to the Pi's GPIO pins and use each of them to rep
     >>> leds = [LED(pin) for pin in pins]
     ```
 
-    *This is called list comprehension: generating a list in one line instead of using a traditional loop*
+    This is called list comprehension: generating a list in one line instead of using a traditional loop.
 
 1. Inspect the `leds` list:
 
@@ -253,7 +253,7 @@ Next, you'll connect some LEDs to the Pi's GPIO pins and use each of them to rep
     ...]
     ```
 
-    *This prints out a representation of each object in the list, which shows some useful information.*
+    This prints out a representation of each object in the list, which shows some useful information.
 
 1. Test the `leds` list by turning them all on:
 
@@ -324,7 +324,7 @@ Now you'll use the LEDs to display the number of people currently in space.
 
     As you can see, this provides a list of the LEDs associated with index numbers, starting from `0`.
 
-1. Since `enumerate` returns two values, the *index number* and the *LED object*, you can loop over it and access both values by using `for i, led in enumerate(leds)`. Add the following loop to the code in your file:
+1. Since `enumerate` returns two values, the index number and the LED object, you can loop over it and access both values by using `for i, led in enumerate(leds)`. Add the following loop to the code in your file:
 
     ```python
     for i, led in enumerate(leds):
@@ -369,7 +369,7 @@ Try making your own indicator unit out of wood or cardboard:
 
 Finally, learn to get the astronaut names from the API call.
 
-1. When you originally inspected the JSON object, as well as the *number* of people in space it showed the *names* of all the astronauts. Return to the Python shell and inspect `j['people']` from the dictionary:
+1. When you originally inspected the JSON object, it showed the names of all the people in space as well as just the number. Return to the Python shell and inspect `j['people']` from the dictionary:
 
     ```python
     >>> type(j['people'])
