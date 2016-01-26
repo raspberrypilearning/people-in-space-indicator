@@ -2,15 +2,15 @@
 
 Use the Python `requests` module to access the *People in Space API*, and create an indicator to show the number of people currently in space.
 
-British ESA Astronaut Tim Peake will be going to the International Space Station on 15th December 2015, so this is a great activity to do in time for his arrival. As well as the scientific research Tim will be performing while in space, he's also going to be running experiments using Python code written by school students on two Raspberry Pis, as part of the [Astro Pi](https://astro-pi.org) project.
+On 15th December 2015, British ESA Astronaut Tim Peake set off for the International Space Station, where he will be living and working for six months. As well as the scientific research Tim will be performing while in space, he's also going to be running experiments using Python code written by school students on two Raspberry Pis, as part of the [Astro Pi](https://astro-pi.org) project. By working through this resource, you can keep count of Tim and his fellow astronauts on the ISS.  
 
 ## Browse the People in Space API
 
-**API** stands for *Application Programming Interface*. One form of API is a *web API*, which can be used to extract data from a service provided online. Some APIs are open to the public and provide data free of charge; other APIs require a login to access them, which can be obtained with an application, or can be provided as a service to customers for a fee.
+API stands for Application Programming Interface. One form of API is a web API, which can be used to extract data from a service provided online. Some APIs are open to the public and provide data free of charge; other APIs require a login to access them, which can be obtained with an application, or can be provided as a service to customers for a fee.
 
 The purpose of providing data via an API is to allow people to access it for their own use or to build programs with it. Some APIs provide business-critical data sets or otherwise important data about things like the weather, financial activity, or even providing access to things like a Twitter stream or Flickr photographs from around the world. Other APIs are just for fun, like the [Pokemon API](http://pokeapi.co/), the [Star Wars API](http://swapi.co/) or the [Adventure Time API](http://adventuretimeapi.com/). While these APIs were made for fun, they can still be used in interesting and useful ways. You could build a Pokemon game in Minecraft, or build a quiz game about the characters in Adventure Time!
 
-For this project, you're going to use the *[People in Space API](http://open-notify.org/Open-Notify-API/People-In-Space/)*, maintained and provided for free by [Nathan Bergey](http://open-notify.org/about).
+For this project, you're going to use the [People in Space API](http://open-notify.org/Open-Notify-API/People-In-Space/), maintained and provided for free by [Nathan Bergey](http://open-notify.org/about).
 
 1. Start by opening a web browser and navigating to the following URL:
 
