@@ -3,9 +3,12 @@ hero_image: images/banner.png
 description: Build an indicator of the number of people in space
 original_url: https://www.raspberrypi.org/learning/people-in-space-indicator/
 theme: cc-prototype
-duration: 3 # 1, 2 or 3
+duration: 2
+listed: false
 published: false
 ingredient: false
+interests: space
+technologies: python
 steps:
   - title: Introduction
   - title: What you will need
