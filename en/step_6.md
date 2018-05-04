@@ -24,9 +24,17 @@ In the previous section, you connected your LEDs to your Raspberry Pi, and hopef
 	r = requests.get(url)
 	data = r.json()
 	people = data['number']
+	print(people)
 	```
 
-- You need to create an LED Bar Graph object containing all the GPIO pins you are using. Make sure your pin numbers are in the same order you have used to wire them to the breadboard. For example, you may have wired your LEDs as shown in the following schematic:
+	To control the LEDs, we are using the `LEDBarGraph` class.
+
+	GPIO Zero's `LED` and `LEDBoard` classes allow you to control individual LEDs, whereas the `LEDBarGraph` class allows you to maintain an object representing a line of LEDs, where the object's value determines how many of the LEDs should be lit. In this project, we use `LEDBarGraph` because we want to use the LEDs like a bar graph to show the how many astronauts are in space.
+
+	If the bar graph's value is set to 1, all the LEDs are lit. If it's set to 0, none are lit. When set to 1/2 or 0.5, the first half of the LEDs are lit. Any other fraction or value between 0 and 1 can be used.
+
+- Now create an LED Bar Graph object containing all the GPIO pins you are using. Make sure your pin numbers are in the same order you have used to wire them to the breadboard. For example, you may have wired your LEDs as shown in the following schematic:
+
   ![circuit](images/circuit.png)
   In that case, your code should look like this:
 
@@ -49,13 +57,11 @@ In the previous section, you connected your LEDs to your Raspberry Pi, and hopef
 
 - Now, try other fractions to light up different numbers of LEDs.
 
-
-
-- To test all the LEDs, you can create a loop that will turn on and off all the `LED` objects in the `leds` list. Once it's running, this should occur:
+- To turn on lights in a sequence, write a loop to turn all the LEDs on one by one:
 
 	```python
 	for i in range(10):
-	    leds.value = (i+1) / 8
+	    leds.value = (i+1) / 10
 			sleep(1)
 	```
 
@@ -63,7 +69,7 @@ In the previous section, you connected your LEDs to your Raspberry Pi, and hopef
 
 --- hints --- --- hint ---
 1. Import the `sleep` function from the time module
-2. Use a `for` loop to go over each item in the `leds` list
+2. Use a `for` loop to go over each item in the `LEDBarGraph`
 3. Instruct each item to turn `on()`, then `sleep`, and then turn `off()`
 --- /hint --- --- hint ---
 Try and complete the code shown below.
