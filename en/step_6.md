@@ -61,8 +61,8 @@ In the previous section, you connected your LEDs to your Raspberry Pi, and hopef
 
 	```python
 	for i in range(10):
-	    leds.value = (i+1) / 10
-			sleep(1)
+		leds.value = (i+1) / 10
+		sleep(1)
 	```
 
 - Have a go at writing the test loop by yourself. Use the hints below if you need help.
@@ -88,8 +88,8 @@ data = r.json()
 people = data['number']
 
 for i in range(10):
-	leds.value = (i+1) / 10
-	sleep(1)
+	  leds.value = (i+1) / 10
+	  sleep(1)
 ```
 --- /hint ---
 --- /hints ---
