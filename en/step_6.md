@@ -68,30 +68,25 @@ In the previous section, you connected your LEDs to your Raspberry Pi, and hopef
 - Have a go at writing the test loop by yourself. Use the hints below if you need help.
 
 --- hints --- --- hint ---
-1. Import the `sleep` function from the time module
+1. Import the `sleep` function from the `time` module
 2. Use a `for` loop to go over each item in the `LEDBarGraph`
 3. Instruct each item to turn `on()`, then `sleep`, and then turn `off()`
 --- /hint --- --- hint ---
 Try and complete the code shown below.
 ```python
 import requests
-from gpiozero import LED
+from gpiozero import LEDBarGraph
 from time import sleep
 
-pins = [17, 18, 27, 22, 23, 24, 10, 25, 9, 11]
-leds = [LED(pin) for pin in pins]
+leds = LEDBarGraph(17, 18, 27, 22, 23, 24, 10, 25, 9, 11)
 
 url = "http://api.open-notify.org/astros.json"
 r = requests.get(url)
 data = r.json()
 people = data['number']
 
-for led in leds:
-    ##turn on the led
-    sleep(2)
-	##turn off the led
+for i in range(10):
+	leds.value = (i+1) / 10
+	sleep(1)
 ```
---- /hint --- --- hint ---
-Here's a video showing the code being written along with an explanation.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HIXo7UGAJ1I" frameborder="0" allowfullscreen></iframe>
---- /hint --- --- /hints ---
+--- /hint ---
