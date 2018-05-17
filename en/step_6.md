@@ -44,9 +44,9 @@ In the previous section, you connected your LEDs to your Raspberry Pi, and hopef
 
 - Test your LEDs using the `on` method. This, for instance, will turn on all the LEDs:
 
-		```python
-		leds.on()
-		```
+	```python
+	leds.on()
+	```
 
 - To light up half your LEDs (5 out of 10 LEDs), set the bar graph value to the fraction of LEDs you want lit:
 
@@ -67,11 +67,13 @@ In the previous section, you connected your LEDs to your Raspberry Pi, and hopef
 
 - Have a go at writing the test loop by yourself. Use the hints below if you need help.
 
---- hints --- --- hint ---
+--- hints ---
+--- hint ---
 1. Import the `sleep` function from the `time` module
 2. Use a `for` loop to go over each item in the `LEDBarGraph`
 3. Instruct each item to turn `on()`, then `sleep`, and then turn `off()`
---- /hint --- --- hint ---
+--- /hint ---
+--- hint ---
 Try and complete the code shown below.
 ```python
 import requests
@@ -90,3 +92,4 @@ for i in range(10):
 	sleep(1)
 ```
 --- /hint ---
+--- /hints ---
