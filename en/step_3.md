@@ -4,12 +4,12 @@
 
 For this project, you're going to use the [People in Space API](http://open-notify.org/Open-Notify-API/People-In-Space/), maintained and provided for free by [Nathan Bergey](http://open-notify.org/about).
 
-- Open up a browser window and then navigate to [http://api.open-notify.org/astros.json](    http://api.open-notify.org/astros.json){:target="_blank"}.
+- Open up a browser window and then navigate to [http://api.open-notify.org/astros.json](http://api.open-notify.org/astros.json){:target="_blank"}.
 
-- At the time of writing, the web page looks like this:
+- The web page shows a JSON string like this:
 
-	``` json
-	{"number": 3, "message": "success", "people": [{"name": "Peggy Whitson", "craft": "ISS"}, {"name": "Fyodor Yurchikhin", "craft": "ISS"}, {"name": "Jack Fischer", "craft": "ISS"}]}
+	```json
+	{"people": [{"name": "Anton Shkaplerov", "craft": "ISS"}, {"name": "Scott Tingle", "craft": "ISS"}, {"name": "Norishige Kanai", "craft": "ISS"}, {"name": "Oleg Artemyev", "craft": "ISS"}, {"name": "Andrew Feustel", "craft": "ISS"}, {"name": "Richard Arnold", "craft": "ISS"}], "number": 6, "message": "success"}
 	```
 
 - When you see data being presented like this, it is usually **JSON** data. This stands for **JavaScript Object Notation**. JSON is great for sending data between different computer systems and software, because it really doesn't matter which language you are programming in.
@@ -30,9 +30,9 @@ Here's the steps you'll need to follow:
 Here's a partially completed script that you can use as a start:
 ```python
 import requests
-url = 
+url =
 r = requests.get(  )
-data = 
+data =
 ```
 --- /hint --- --- hint ---
 Here's a video showing you what to do:
