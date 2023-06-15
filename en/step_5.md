@@ -16,9 +16,9 @@ You'll notice that, while you have plenty of GPIO pins to use, you have a limite
 You can test each LED is working by connecting it to the **3V3** pin on the Raspberry Pi, before choosing a GPIO pin for it.
 --- /hint --- --- hint ---
 Here's one way a single LED could be connected using the common ground rail:
-![single led](images/single_led.jpg)
+![A ground pin of a Raspberry Pi connected to a breadboard's ground rail. The breadboard also has a resistor connected between the ground rail and the ground leg of an LED. The LED's positive leg is connected to a GPIO pin on the Raspberry Pi](images/single_led.jpg)
 --- /hint --- --- hint ---
 Here you can see all the LEDs being wired up, along with a schematic of one way of putting everything together. Each LED is tested using the **3V3** pin before it is connected to a GPIO pin.
-![led placement](images/led_placement.gif)
-![circuit](images/circuit.png)
+![Animation of 10 LEDs being tested and then connected to GPIO pins on a Raspberry Pi, using the common ground rail.](images/led_placement.gif)
+![Raspberry Pi circuit](images/circuit.png)
 --- /hint --- --- /hints ---

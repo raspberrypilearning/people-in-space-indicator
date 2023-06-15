@@ -41,7 +41,7 @@ In the next stage, you will make the number of LEDs that are on the same as the 
 
 --- hints --- --- hint ---
 1. Within the `while` loop, create a `for` loop. It should loop over `range(people)`.
-2. The loop should turn on the right number of LEDs before the script sleeps for 60 seconds. You don' `print(people)`.
+2. The loop should turn on the right number of LEDs before the script sleeps for 60 seconds. You can remove `print(people)`.
 --- /hint --- --- hint ---
 Here is some of the code - you just need to complete the areas where comments have been written.
 ```python
