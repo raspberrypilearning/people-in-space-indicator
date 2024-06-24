@@ -15,7 +15,7 @@ Here's some incomplete code to help you out:
 
 ```python
 import requests
-url = "http://api.open-notify.org/astros.json"
+url = "https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json"
 r = requests.get(url)
 data = r.json()
 people = data[SOMETHING GOES HERE]

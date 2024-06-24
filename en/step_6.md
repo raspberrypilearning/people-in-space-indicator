@@ -7,7 +7,7 @@ In the previous section, you connected your LEDs to your Raspberry Pi, and hopef
 	```python
 	import requests
 
-	url = "http://api.open-notify.org/astros.json"
+	url = "https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json"
 	r = requests.get(url)
 	data = r.json()
 	people = data['number']
@@ -20,7 +20,7 @@ In the previous section, you connected your LEDs to your Raspberry Pi, and hopef
 	from time import sleep
 	from gpiozero import LEDBarGraph
 
-	url = "http://api.open-notify.org/astros.json"
+	url = "https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json"
 	r = requests.get(url)
 	data = r.json()
 	people = data['number']

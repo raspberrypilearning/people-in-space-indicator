@@ -11,7 +11,7 @@ In the next stage, you will make the number of LEDs that are on the same as the 
 
 	leds = LEDBarGraph(17, 18, 27, 22, 23, 24, 10, 25, 9, 11)
 
-	url = "http://api.open-notify.org/astros.json"
+	url = "https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json"
 	r = requests.get(url)
 	data = r.json()
 	people = data['number']
@@ -27,7 +27,7 @@ In the next stage, you will make the number of LEDs that are on the same as the 
 
 	leds = LEDBarGraph(17, 18, 27, 22, 23, 24, 10, 25, 9, 11)
 
-	url = "http://api.open-notify.org/astros.json"
+	url = "https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json"
 
 	while True:
 		r = requests.get(url)
@@ -51,7 +51,7 @@ Here is some of the code - you just need to complete the areas where comments ha
 
 	leds = LEDBarGraph(17, 18, 27, 22, 23, 24, 10, 25, 9, 11)
 
-	url = "http://api.open-notify.org/astros.json"
+	url = "https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json"
 
 	while True:
 		r = requests.get(url)
