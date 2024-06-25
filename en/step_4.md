@@ -2,6 +2,10 @@
 
 The `requests` module has stored the data as a **dictionary**.
 
+--- collapse ---
+---
+title: What is a dictionary?
+---
 Dictionaries consist of **key** and **value** pairs. 
 
 --- code ---
@@ -21,6 +25,7 @@ fruit = {
 
 In this example, `print(fruit['a'])` would print `apple`. The **key** is `a` and the **value** is `apple`.
 
+--- /collapse ---
 
 The `data` dictionary you just fetched contains a value which is the number of people that are in space at the moment.
 
