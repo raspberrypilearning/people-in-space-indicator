@@ -2,11 +2,6 @@
 
 The `requests` module has stored the data as a **dictionary**.
 
---- collapse ---
----
-title: What is a dictionary?
----
-
 Dictionaries consist of **key** and **value** pairs. 
 
 --- code ---
@@ -26,10 +21,8 @@ fruit = {
 
 In this example, `print(fruit['a'])` would print `apple`. The **key** is `a` and the **value** is `apple`.
 
---- /collapse ---
 
-
-The dictionary contains a value which is the number of people that are in space at the moment.
+The `data` dictionary you just fetched contains a value which is the number of people that are in space at the moment.
 
 --- task ---
 - Look at the data to find out the **key** you need to use. Fill in the rest of the code on line 6 to use the key to look up how many people are currently in space.
@@ -58,7 +51,6 @@ title: Show me how
 language: python
 line_numbers: true
 line_number_start: 6
-line_highlights: 6
 ---
 people = data['number']
 
