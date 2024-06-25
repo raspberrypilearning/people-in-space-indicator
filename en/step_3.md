@@ -5,11 +5,11 @@
 For this project, you're going to use the [International Space Station APIs](https://github.com/corquaid/international-space-station-APIs), maintained and provided for free by [Cormac Quaid](https://github.com/corquaid).
 
 --- task ---
-+ Open a browser window and then navigate to [https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json](https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json){:target="_blank"}.
++ Open this link in a web browser [https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json](https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json){:target="_blank"}
 
 --- /task ---
 
-The web page shows some code called a JSON string:
+The web page shows some data in a format called JSON:
 
 --- code ---
 ---
@@ -28,9 +28,10 @@ line_numbers: false
 }
 --- /code ---
 
-Use the `requests` module to load the data into Python.
+
 
 --- task ---
++ Use the `requests` module to load the data into Python.
 
 --- code ---
 ---
