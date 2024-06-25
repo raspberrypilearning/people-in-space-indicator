@@ -2,7 +2,7 @@
 --- challenge ---
 
 --- task ---
-- **LED effects** - Make the LEDs blink or light up one at a time within a loop?
+- **LED effects** - Make the LEDs blink or light up one at a time within a loop.
 --- /task ---
 
 --- task ---
