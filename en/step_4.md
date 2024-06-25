@@ -59,4 +59,6 @@ people = data['number']
 
 --- /task ---
 
-**Test:** Run your code and you should see the number of people currently in space printed on the screen.
+--- task ---
++ **Test:** Run your code and you should see the number of people currently in space printed on the screen.
+--- /task ---
