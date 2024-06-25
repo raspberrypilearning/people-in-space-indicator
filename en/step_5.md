@@ -13,3 +13,5 @@
 ![Ten LEDs connected to GPIO pins via ground rail and a resistor](images/10-leds.png)
 
 --- /task ---
+
+![LED placement](images/led_placement.gif)
