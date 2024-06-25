@@ -8,6 +8,7 @@ Display the number of people in space using your LEDs. The number will update on
 
 --- /task ---
 
+--- task ---
 - Modify your code to add an infinite loop that waits sixty seconds before running again. 
 
 --- code ---
