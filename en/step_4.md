@@ -38,13 +38,11 @@ The dictionary contains a value which is the number of people that are in space 
 ---
 language: python
 line_numbers: true
-line_number_start: 1
+line_number_start: 4
 line_highlights: 6-7
 ---
-import requests
-url = "https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json"
-r = requests.get(url)
 data = r.json()
+print(data)
 people = 
 print(people)
 
