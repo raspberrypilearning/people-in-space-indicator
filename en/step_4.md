@@ -48,6 +48,23 @@ print(people)
 
 --- /code ---
 
+--- collapse ---
+---
+title: Show me how
+---
+
+--- code ---
+---
+language: python
+line_numbers: true
+line_number_start: 6
+line_highlights: 6
+---
+people = data['number']
+
+--- /code ---
+--- /collapse ---
+
 --- /task ---
 
 **Test:** Run your code and you should see the number of people currently in space printed on the screen.
