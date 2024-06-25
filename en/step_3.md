@@ -7,7 +7,7 @@ For this project, you're going to use the [International Space Station APIs](htt
 --- task ---
 + Open a browser window and then navigate to [https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json](https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json){:target="_blank"}.
 
---- task ---
+--- /task ---
 
 The web page shows some code called a JSON string:
 
