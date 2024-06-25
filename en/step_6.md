@@ -69,7 +69,7 @@ leds.on()
 
 --- task ---
 
-+ ***Test:** Run your program and you should see all of the LEDs light up.
++ **Test:** Run your program and you should see all of the LEDs light up.
 
 --- /task ---
 
@@ -96,3 +96,8 @@ leds.value = 5/10
 
 --- /task ---
 
+--- task ---
+
++ **Test:** Run your code and you should see a number of lit LEDs equal to the number that was printed.
+
+--- /task ---
