@@ -9,14 +9,14 @@ Display the number of people in space using your LEDs. The number will update on
 --- /task ---
 
 --- task ---
-- Modify your code to add an infinite loop that waits sixty seconds before running again. 
+- Modify your code to add an infinite loop that waits sixty seconds before running again. Indent your previous code to fetch the data from the API so that it is inside the loop. 
 
 --- code ---
 ---
 language: python
 line_numbers: true
 line_number_start: 1
-line_highlights: 3, 9-14
+line_highlights: 3, 9, 14
 ---
 import requests
 from gpiozero import LEDBarGraph
@@ -46,7 +46,7 @@ while True:
 language: python
 line_numbers: true
 line_number_start: 9
-line_highlights: 14,15
+line_highlights: 14-15
 ---
 while True:
 	r = requests.get(url)
