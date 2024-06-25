@@ -31,6 +31,8 @@ line_numbers: false
 
 
 --- task ---
++ Open a new **Python file**
+
 + Use the `requests` module to load the data into Python.
 
 --- code ---
@@ -43,7 +45,16 @@ import requests
 url = "https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json"
 r = requests.get(url)
 data = r.json()
+print(data)
 
 --- /code ---
 
 --- /task ---
+
+<div class="c-project-callout c-project-callout--tip">
+
+### Tip
+
+Test
+
+</div>
