@@ -1,4 +1,4 @@
-## Examining the data
+## Examine the data
 
 The `requests` module has stored the data as a **dictionary**.
 

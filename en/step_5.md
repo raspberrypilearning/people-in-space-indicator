@@ -1,4 +1,4 @@
-## Setting up the LEDs
+## Set up the LEDs
 
 --- task ---
 + Connect an LED to one of your Raspberry Pi's GPIO pins, using a breadboard and a resistor. The shorter leg of the LED should be connected to the ground rail (-) of your breadboard.

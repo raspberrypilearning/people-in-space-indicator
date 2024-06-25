@@ -1,66 +1,98 @@
-## Testing your LEDs
+## Control the LEDs with code
 
-In the previous section, you connected your LEDs to your Raspberry Pi, and hopefully tested that each one works using the **3V3** pin. Now you are going to test that you can control each LED with code.
+Now that your LEDs are set up, you can control each LED with code.
 
-- Make sure you have the file open on which you were working earlier. It should look something like this:
+--- task ---
++ Re-open the Python file you started earlier. 
 
-	```python
-	import requests
++ Import `gpiozero` which allows you to control LEDs using Python:
 
-	url = "https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json"
-	r = requests.get(url)
-	data = r.json()
-	people = data['number']
-	```
+--- code ---
+---
+language: python
+line_numbers: true
+line_number_start: 1
+line_highlights: 2
+---
+import requests
+from gpiozero import LEDBarGraph
+url = "https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json"
+r = requests.get(url)
+data = r.json()
+print(data)
+people = data['number']
+print(people)
 
-- Start by importing the code you need to control LEDs using Python:
+--- /code ---
 
-	```python
-	import requests
-	from time import sleep
-	from gpiozero import LEDBarGraph
+--- /task ---
 
-	url = "https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json"
-	r = requests.get(url)
-	data = r.json()
-	people = data['number']
-	print(people)
-	```
+You will use the `LEDBarGraph` class to draw a bar graph using the LEDs. 
 
-	To control the LEDs, we are using the `LEDBarGraph` class.
+--- collapse ---
+---
+title: How does LEDBarGraph work?
+---
+If the bar graph's value is set to 1, all the LEDs are lit. If it's set to 0, none are lit. When set to 1/2 or 0.5, the first half of the LEDs are lit. Any other fraction or value between 0 and 1 can be used.
 
-	GPIO Zero's `LED` and `LEDBoard` classes allow you to control individual LEDs, whereas the `LEDBarGraph` class allows you to maintain an object representing a line of LEDs, where the object's value determines how many of the LEDs should be lit. In this project, we use `LEDBarGraph` because we want to use the LEDs like a bar graph to show the how many astronauts are in space.
+--- /collapse ---
 
-	If the bar graph's value is set to 1, all the LEDs are lit. If it's set to 0, none are lit. When set to 1/2 or 0.5, the first half of the LEDs are lit. Any other fraction or value between 0 and 1 can be used.
+--- task---
++ Create an LED Bar Graph containing all the GPIO pins you are using. The numbers in the brackets are the pin numbers, so write the numbers in the same order you wired the LEDS to the breadboard. For example:
 
-- Now create an LED Bar Graph object containing all the GPIO pins you are using. Make sure your pin numbers are in the same order you have used to wire them to the breadboard. For example, you may have wired your LEDs as shown in the following schematic:
+--- code ---
+---
+language: python
+line_numbers: true
+line_number_start: 7
+line_highlights: 9
+---
+people = data['number']
+print(people)
+leds = LEDBarGraph(17, 18, 27, 22, 23, 24, 10, 25, 9, 11)
 
-  ![circuit](images/circuit.png)
-  In that case, your code should look like this:
+--- /code ---
+	
+--- /task ---
 
-	```python
-	leds = LEDBarGraph(17, 18, 27, 22, 23, 24, 10, 25, 9, 11)
-	```
+--- task ---
++ Test that your LEDs work using the `on` method to turn them all on. 
 
-- Test your LEDs using the `on` method. This, for instance, will turn on all the LEDs:
+--- code ---
+---
+language: python
+line_numbers: true
+line_number_start: 7
+line_highlights: 10
+---
+people = data['number']
+print(people)
+leds = LEDBarGraph(17, 18, 27, 22, 23, 24, 10, 25, 9, 11)
+leds.on()
 
-	```python
-	leds.on()
-	```
+--- /code ---
+--- /task ---
 
-- To light up half your LEDs (5 out of 10 LEDs), set the bar graph value to the fraction of LEDs you want lit:
+--- task ---
++ Delete the `leds.on()` code.
 
-	```python
-	leds.value = 5/10
-	```
-	For the example above, instead of `5/10` you could also use `1/2` or `0.5`.
++ To light up half of the LEDs, set the bar graph value to the fraction of LEDs you want lit:
 
-- Now, try other fractions to light up different numbers of LEDs.
+--- code ---
+---
+language: python
+line_numbers: true
+line_number_start: 7
+line_highlights: 10
+---
+people = data['number']
+print(people)
+leds = LEDBarGraph(17, 18, 27, 22, 23, 24, 10, 25, 9, 11)
+leds.value = 5/10
 
-- To turn on lights in a sequence, write a loop to turn all the LEDs on one by one:
+--- /code ---
 
-	```python
-	for i in range(10):
-		leds.value = (i+1) / 10
-		sleep(1)
-	```
++ Try other fractions to light up different numbers of LEDs.
+
+--- /task ---
+
