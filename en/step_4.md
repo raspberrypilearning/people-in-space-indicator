@@ -1,26 +1,55 @@
 ## Examining the data
 
-Now that you have stored the web page data, you can have a look at it in more detail. The `requests` module has stored the data as a simple Python dictionary. What you need to know is the number of people that are in space at the moment.
+The `requests` module has stored the data as a **dictionary**.
 
-Have a look at the section below if you need to learn how to use dictionaries in Python.
+--- collapse ---
+---
+title: What is a dictionary?
+---
 
-[[[generic-python-basic-dictionaries]]]
+Dictionaries consist of **key** and **value** pairs. 
 
-- Use the `data` dictionary you have to find the number of people in space and store it as a variable called `people`.
+--- code ---
+---
+language: python
+line_numbers: true
+line_number_start: 1
+---
+fruit = {
+    'a' : 'apple',
+    'b' : 'banana',
+    'c' : 'coconut',
+    'd' : 'durian'
+    }
 
---- hints --- --- hint ---
-Don't forget that the `key` in this dictionary is a string. So you'll need to look up its `'number'` using quotes `'`.
---- /hint --- --- hint ---
-Here's some incomplete code to help you out:
+--- /code ---
 
-```python
+In this example, `print(fruit['a'])` would print `apple`. The **key** is `a` and the **value** is `apple`.
+
+--- /collapse ---
+
+
+The dictionary contains a value which is the number of people that are in space at the moment.
+
+--- task ---
+- Look at the data to find out the **key** you need to use. Fill in the rest of the code on line 6 to use the key to look up how many people are currently in space.
+
+--- code ---
+---
+language: python
+line_numbers: true
+line_number_start: 1
+line_highlights: 6-7
+---
 import requests
 url = "https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json"
 r = requests.get(url)
 data = r.json()
-people = data[SOMETHING GOES HERE]
-```
---- /hint --- --- hint ---
-Have a look at the video below to see how to inspect the data in the dictionary.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gMeKNygN9A4" frameborder="0" allowfullscreen></iframe>
---- /hint --- --- /hints ---
+people = 
+print(people)
+
+--- /code ---
+
+--- /task ---
+
+**Test:** Run your code and you should see the number of people currently in space printed on the screen.

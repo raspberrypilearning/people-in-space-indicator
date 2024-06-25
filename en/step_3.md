@@ -28,8 +28,6 @@ line_numbers: false
 }
 --- /code ---
 
-
-
 --- task ---
 + Open a new **Python file**
 
@@ -51,10 +49,4 @@ print(data)
 
 --- /task ---
 
-<div class="c-project-callout c-project-callout--tip">
-
-### Tip
-
-Test
-
-</div>
+**Test:** Run your program and you should see the JSON data printed on the screen.
