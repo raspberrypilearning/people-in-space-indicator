@@ -5,7 +5,7 @@ Now that your LEDs are set up, you can control each LED with code.
 --- task ---
 + Re-open the Python file you started earlier. 
 
-+ Import `gpiozero` which allows you to control LEDs using Python:
++ Add some code to import `gpiozero` which allows you to control LEDs using Python:
 
 --- code ---
 ---
@@ -16,12 +16,6 @@ line_highlights: 2
 ---
 import requests
 from gpiozero import LEDBarGraph
-url = "https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json"
-r = requests.get(url)
-data = r.json()
-print(data)
-people = data['number']
-print(people)
 
 --- /code ---
 
@@ -38,7 +32,7 @@ If the bar graph's value is set to 1, all the LEDs are lit. If it's set to 0, no
 --- /collapse ---
 
 --- task---
-+ Create an LED Bar Graph containing all the GPIO pins you are using. The numbers in the brackets are the pin numbers, so write the numbers in the same order you wired the LEDS to the breadboard. For example:
++ Add the code to create an LED Bar Graph containing all the GPIO pins you are using. The numbers in the brackets are the pin numbers, so write the numbers in the same order you wired the LEDS to the breadboard. For example:
 
 --- code ---
 ---
@@ -56,7 +50,7 @@ leds = LEDBarGraph(17, 18, 27, 22, 23, 24, 10, 25, 9, 11)
 --- /task ---
 
 --- task ---
-+ Test that your LEDs work using the `on` method to turn them all on. 
++ Add some code to turn all of the LEDs on, so that you can check that they work properly.
 
 --- code ---
 ---
@@ -71,6 +65,12 @@ leds = LEDBarGraph(17, 18, 27, 22, 23, 24, 10, 25, 9, 11)
 leds.on()
 
 --- /code ---
+--- /task ---
+
+--- task ---
+
++ ***Test:** Run your program and you should see all of the LEDs light up.
+
 --- /task ---
 
 --- task ---
@@ -92,7 +92,7 @@ leds.value = 5/10
 
 --- /code ---
 
-+ Try other fractions to light up different numbers of LEDs.
++ **Test:** Run your program and check that only 5 of the LEDs light up.
 
 --- /task ---
 
