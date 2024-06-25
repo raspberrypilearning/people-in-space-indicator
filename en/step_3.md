@@ -11,8 +11,12 @@ For this project, you're going to use the [International Space Station APIs](htt
 
 The web page shows some code called a JSON string:
 
-	```json
-	{
+--- code ---
+---
+language: json
+line_numbers: false
+---
+{
   "number": 12,
   "iss_expedition": 71,
   "expedition_patch": "https://upload.wikimedia.org/wikipedia/commons/b/b4/ISS_Expedition_71_Patch.png",
@@ -21,8 +25,8 @@ The web page shows some code called a JSON string:
   "expedition_start_date": 1712354400,
   "expedition_end_date": 1727128800,
   ...
-  }
-	```
+}
+--- /code ---
 
 Use the `requests` module to load the data into Python.
 
