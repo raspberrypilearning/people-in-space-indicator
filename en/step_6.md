@@ -43,7 +43,7 @@ line_highlights: 9
 ---
 people = data['number']
 print(people)
-leds = LEDBarGraph(17, 18, 27, 22, 23, 24, 10, 25, 9, 11)
+leds = LEDBarGraph(21, 20, 16, 12, 8, 25, 24, 23, 18, 14)
 
 --- /code ---
 	
@@ -61,7 +61,7 @@ line_highlights: 10
 ---
 people = data['number']
 print(people)
-leds = LEDBarGraph(17, 18, 27, 22, 23, 24, 10, 25, 9, 11)
+leds = LEDBarGraph(21, 20, 16, 12, 8, 25, 24, 23, 18, 14)
 leds.on()
 
 --- /code ---
@@ -87,7 +87,7 @@ line_highlights: 10
 ---
 people = data['number']
 print(people)
-leds = LEDBarGraph(17, 18, 27, 22, 23, 24, 10, 25, 9, 11)
+leds = LEDBarGraph(21, 20, 16, 12, 8, 25, 24, 23, 18, 14)
 leds.value = 5/10
 
 --- /code ---

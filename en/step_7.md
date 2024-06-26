@@ -22,7 +22,7 @@ import requests
 from gpiozero import LEDBarGraph
 from time import sleep
 
-leds = LEDBarGraph(17, 18, 27, 22, 23, 24, 10, 25, 9, 11)
+leds = LEDBarGraph(21, 20, 16, 12, 8, 25, 24, 23, 18, 14)
 
 url = "https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json"
 

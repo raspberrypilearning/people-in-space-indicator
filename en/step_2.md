@@ -4,7 +4,7 @@
 - A Raspberry Pi computer
 - A solderless breadboard
 - 10 x LEDs
-- 10 x 47R resistors
+- 10 x 47 Ohm resistors
 - 11 x pin-to-socket jumper leads
 
 ### Software
