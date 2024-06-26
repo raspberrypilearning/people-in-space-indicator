@@ -20,12 +20,12 @@ steps:
 - title: Introduction
 - title: What you will need
 - title: The People in Space API
-- title: Examining the data
+- title: Examine the data
   completion:
   - engaged
-- title: Setting up the LEDs
-- title: Testing your LEDs
+- title: Set up the LEDs
+- title: Control the LEDs with code
 - title: An LED for each astronaut
   completion:
   - internal
-- title: What next?
+- title: Challenge

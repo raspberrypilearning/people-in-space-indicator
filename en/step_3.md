@@ -1,15 +1,22 @@
 ## The People in Space API
 
-'API' stands for **Application Programming Interface**. This really just means a set of rules to let bits of software talk to each other. One type of API is a web API. A web API is a set of rules that lets software talk to an online server. You could use a web API to get data from a  wenserver, or get the server to do complicated processing that your computer can't do alone.
+'API' stands for **Application Programming Interface**. A web API is a set of rules that lets software talk to an online server. 
 
 For this project, you're going to use the [International Space Station APIs](https://github.com/corquaid/international-space-station-APIs), maintained and provided for free by [Cormac Quaid](https://github.com/corquaid).
 
-- Open up a browser window and then navigate to [https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json](https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json){:target="_blank"}.
+--- task ---
++ Open this link in a web browser [https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json](https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json){:target="_blank"}
 
-- The web page shows a JSON string like this:
+--- /task ---
 
-	```json
-	{
+The web page shows some data in a format called JSON:
+
+--- code ---
+---
+language: json
+line_numbers: false
+---
+{
   "number": 12,
   "iss_expedition": 71,
   "expedition_patch": "https://upload.wikimedia.org/wikipedia/commons/b/b4/ISS_Expedition_71_Patch.png",
@@ -18,32 +25,31 @@ For this project, you're going to use the [International Space Station APIs](htt
   "expedition_start_date": 1712354400,
   "expedition_end_date": 1727128800,
   ...
-  }
-	```
+}
+--- /code ---
 
-- When you see data being presented like this, it is usually **JSON** data. This stands for **JavaScript Object Notation**. JSON is great for sending data between different computer systems and software, because it really doesn't matter which language you are programming in.
+--- task ---
++ Open a new **Python file**
 
-- Your first task is to use the `requests` module in Python to fetch the data you can see in your web browser.
++ Use the `requests` module to load the data into Python.
 
-[[[generic-python-requests]]]
-
-Now see if you can fetch the data from the People In Space API using the `requests` module.
-
---- hints --- --- hint ---
-Here's the steps you'll need to follow:
-- Import the `requests` module
-- Store the People In Space API URL as a variable
-- Fetch the page's data using `requests.get()`
-- Store the **JSON** content from the page as data
---- /hint --- --- hint ---
-Here's a partially completed script that you can use as a start:
-```python
+--- code ---
+---
+language: python
+line_numbers: true
+line_number_start: 1
+---
 import requests
-url =
-r = requests.get(  )
-data =
-```
---- /hint --- --- hint ---
-Here's a video showing you what to do:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3gNCeWMdU1Y" frameborder="0" allowfullscreen></iframe>
---- /hint --- --- /hints ---
+url = "https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json"
+r = requests.get(url)
+data = r.json()
+print(data)
+
+--- /code ---
+
+--- /task ---
+
+--- task ---
++ **Test:** Run your program and you should see the JSON data printed on the screen.
+
+--- /task ---
