@@ -10,5 +10,5 @@
 ### Software
 - Python 3 `requests` module. To install this, open a terminal and type:
   ```
-  sudo apt-install python3-requests
+  sudo apt install python3-requests
   ```
